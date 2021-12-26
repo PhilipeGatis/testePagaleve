@@ -18,6 +18,7 @@ jobs:
       - name: Install and Build
         env:
           REACT_APP_GRAPHQL_TOKEN: ${{ secrets.REACT_APP_GRAPHQL_TOKEN }}
+          REACT_APP_GRAPHQL_URL: ${{ secrets.REACT_APP_GRAPHQL_URL }}
         run:  |
           npx yarn install
           npx yarn build

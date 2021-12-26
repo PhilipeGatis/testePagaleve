@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: 17.x
       - name: Install and Build
+        env:
+          REACT_APP_GRAPHQL_TOKEN: ${{ secrets.REACT_APP_GRAPHQL_TOKEN }}
         run:  |
           npx yarn install
           npx yarn build

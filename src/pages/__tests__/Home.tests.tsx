@@ -19,19 +19,10 @@ describe('UserList', () => {
   })
 
   it('should render', async () => {
-    /**
-     * App fetches the query AppQuery. Here we mock it, telling it to return our mock
-     * data declared above.
-     */
     queryMock.mockQuery({
       name: 'HomeQuery',
       data: mockAppQueryData
     })
-
-    /**
-     * We mount the app and wait for our element that displays the app's content
-     * to be visible.
-     */
 
     const history = createMemoryHistory()
 
@@ -45,7 +36,6 @@ describe('UserList', () => {
       </RelayEnvironmentProvider>
     )
 
-    // The ProfileDisplayer displays the name, so we wait for that to appear
     const element = getByTestId('home_page')
     expect(element instanceof HTMLElement).toBe(true)
   })

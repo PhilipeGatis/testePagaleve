@@ -11,7 +11,6 @@ describe('UserList', () => {
     })
     const { getByTestId } = render(<SearchField onEnter={mockCallback} />)
 
-    // The ProfileDisplayer displays the name, so we wait for that to appear
     const element = getByTestId('searchField')
     expect(element instanceof HTMLInputElement).toBe(true)
   })
@@ -22,7 +21,6 @@ describe('UserList', () => {
     })
     const { getByTestId } = render(<SearchField onEnter={mockCallback} />)
 
-    // The ProfileDisplayer displays the name, so we wait for that to appear
     const element = getByTestId('searchField')
     fireEvent.input(element, { target: { value: 'Philipe' } })
     expect((element as HTMLInputElement).value).toBe('Philipe')

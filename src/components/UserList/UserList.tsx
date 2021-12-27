@@ -46,7 +46,7 @@ const UserList: React.FC<Props> = ({ search }) => {
         {data?.search?.edges?.map((user, i) => {
           if (user == null || user.node == null) return null
           return (
-            <Zoom key={user.__id} in>
+            <Zoom data-testid={user.__id} key={user.__id} in>
               <Grid item xs={12} md={6} xl={4}>
                 <UserCard userRef={user.node} />
               </Grid>

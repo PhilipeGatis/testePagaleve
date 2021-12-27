@@ -26,6 +26,9 @@ const SearchField: React.FC<{
         fullWidth
         onChange={e => setValue(e.target.value)}
         placeholder="Type here for search an user..."
+        inputProps={{
+          'data-testid': 'searchField'
+        }}
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

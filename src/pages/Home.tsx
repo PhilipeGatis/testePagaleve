@@ -37,7 +37,7 @@ const Home: React.FC<RouteComponentProps> = () => {
   }
 
   return (
-    <Grid container direction="column" justifyContent="center" alignItems="stretch" spacing={4}>
+    <Grid data-testid="home_page" container direction="column" justifyContent="center" alignItems="stretch" spacing={4}>
       <Grid item xs={12}>
         <Box paddingTop={3}>
           <Lottie options={defaultOptions} height={200} width={200} />

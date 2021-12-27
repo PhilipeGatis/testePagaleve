@@ -29,7 +29,7 @@
   "devDependencies": {
     "@graphql-cli/codegen": "^2.1.5",
     "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
+    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
@@ -53,10 +53,13 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "graphql": "^15.0.0",
     "husky": "^7.0.4",
+    "jest-canvas-mock": "^2.3.1",
     "prettier": "^2.4.1",
     "relay-compiler": "^12.0.0",
     "relay-compiler-language-typescript": "^15.0.0",
     "relay-config": "^12.0.1",
+    "graphql-query-test-mock": "^0.12.1",
+    "nock": "^13.2.1",
     "typescript": "^4.1.2",
     "watchman": "^1.0.0"
   },

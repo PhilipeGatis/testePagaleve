@@ -41,7 +41,7 @@ interface Props {
 const UserCard: React.FC<Props> = ({ userRef }) => {
   const user = useFragment(query, userRef)
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box data-testid={user.id} sx={{ width: '100%' }}>
       <Card variant="outlined">
         <CardHeader
           avatar={

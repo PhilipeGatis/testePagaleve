@@ -1,29 +1,27 @@
-name: Release
+# This is a basic workflow to help you get started with Actions
 
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  tagged-release:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [17.x]
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
-      - name: SetUp Node
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          node-version: 17.x
-      - name: Install and Build
-        env:
-          REACT_APP_GRAPHQL_TOKEN: ${{ secrets.REACT_APP_GRAPHQL_TOKEN }}
-          REACT_APP_GRAPHQL_URL: ${{ secrets.REACT_APP_GRAPHQL_URL }}
-        run:  |
-          npx yarn install
-          npx yarn build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.7
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          node-version: ${{ matrix.node-version }}
+      - name: Install Packages
+        run: yarn
+      - name: test
+        run: yarn test
